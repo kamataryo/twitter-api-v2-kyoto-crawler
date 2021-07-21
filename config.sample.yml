@@ -1,0 +1,8 @@
+---
+secrets:
+  twitter_bearer_token: null
+queries:
+  # ISOで指定
+  start_time: "2020-04-30T15:00:00Z"
+  end_time: "2020-04-30T15:01:00Z"
+  next_token: null
