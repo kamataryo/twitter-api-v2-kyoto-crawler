@@ -30,7 +30,7 @@ const urlBase = `https://api.twitter.com/2/tweets/search/all`;
 const buildQuery = (q = {}) => {
   const query = {
     query: "content lang:ja",
-    max_results: 10,
+    max_results: 100,
     "tweet.fields": "lang,created_at,geo",
     ...base_queries,
     ...q,
@@ -52,7 +52,7 @@ const main = async () => {
   let count = 0;
   let loop = 0;
   do {
-    process.stderr.write(`[next_token #${loop + 1}] ${next_token}\n`);
+    process.stderr.write(`[next_token #${loop + 1}] ${next_token || ""}\n`);
     const querystring = buildQuery({ next_token });
     const url = `${urlBase}?${querystring}`;
     try {
